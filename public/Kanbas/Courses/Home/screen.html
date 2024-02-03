@@ -83,8 +83,21 @@
                                     <a href="/Kanbas/Dashboard/screen.html">
                                         <i class="fa fa-tachometer"></i> Dashboard</a>
                                 </li>
-                                <li><a href="/Kanbas/Courses/Home/screen.html"> <i
-                                            class="fa fa-book"></i>Courses</a> </li>
+                                <li>
+                                    <a href="/Kanbas/Courses/Home/screen.html" data-bs-toggle="collapse" 
+                                        data-bs-target="#coursesSubMenu" aria-expanded="false" 
+                                        aria-controls="coursesSubMenu">
+                                            <i class="fa fa-book">
+                                            </i>Courses 
+                                            <i class="fa fa-chevron-right float-end"></i>
+                                    </a>
+                                    <div class="collapse" id="coursesSubMenu">
+                                        <ul>
+                                            <li><a href="/Kanbas/Courses/Home/screen.html">CS3520 Programming in C++</a></li>
+                                            <li><a href="/Kanbas/Courses/Home/screen.html">CS3500 Object Oriented Design</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
                                 <li><a href="#"><i class="fa fa-calendar"></i>
                                         Calendar</a></li>
                                 <li><a href="#"><i class="fa fa-envelope"></i>
@@ -111,7 +124,8 @@
                             </button>
                             <ul>
                                     <li>
-                                        <a href="/Kanbas/Courses/Home/screen.html">Home</a></li>
+                                        <a href="/Kanbas/Courses/Home/screen.html">Home</a>
+                                    </li>
                                     <li>
                                         <a
                                             href="/Kanbas/Courses/Modules/screen.html">Modules</a>
@@ -135,7 +149,6 @@
                     <i class="fa fa-chevron-down text-white"></i> 
                 </button>
             </div>
-
             <button type="button">Collapse All</button>
             <button type="button">View Progress</button>
             <label for="select-one-genre"></label>
