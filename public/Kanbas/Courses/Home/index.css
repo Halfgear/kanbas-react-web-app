@@ -1,0 +1,17 @@
+.collapse .card-body {
+    padding: 10px;
+    background-color: #fff; /* Light background for the content */
+    border-radius: 5px; /* Optional: rounded corners */
+    margin-bottom: 0px; /* Space between collapsible contents */
+}
+
+
+.collapse .card-body ul li:last-child {
+    border-bottom: none; /* Remove border from the last item */
+}
+
+.collapse .card-body ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: red; /* Bootstrap primary color for links */
+    font-weight: 500; /* Slightly bolder font for readability */
+}
