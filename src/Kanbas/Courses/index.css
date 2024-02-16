@@ -1,0 +1,21 @@
+.courses-container {
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.courses-container h1 {
+    color: red;
+    font-size: 24px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.courses-container h1 .react-icon {
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+
