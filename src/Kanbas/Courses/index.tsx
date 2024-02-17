@@ -3,6 +3,7 @@ import { Navigate, Route, Routes, useParams, useLocation } from "react-router-do
 import { HiMiniBars3 } from "react-icons/hi2";
 import CourseNavigation from "./Navigation";
 import Modules from "./Modules";
+import Assignments from "./Assignments";
 import Home from "./Home";
 import "./index.css";
 function Courses() {
@@ -26,7 +27,7 @@ function Courses() {
                         <Route path="Home" element={<Home />} />
                         <Route path="Modules" element={<Modules />} />
                         <Route path="Piazza" element={<h1 className="tap-title">Piazza</h1>} />
-                        <Route path="Assignments" element={<h1 className="tap-title">Assignments</h1>} />
+                        <Route path="Assignments" element={<Assignments />} />
                         <Route path="Assignments/:assignmentId" element={<h1 className="tap-title">Assignment Editor</h1>} />
                         <Route path="Grades" element={<h1 className="tap-title">Grades</h1>} />
                     </Routes>
