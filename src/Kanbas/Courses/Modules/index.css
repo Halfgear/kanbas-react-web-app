@@ -36,3 +36,33 @@
 .wd-modules>li {
     margin-bottom: 20px;
 }
+
+.wd-modules button {
+    padding: 8px 16px;
+    margin-right: 5px;
+    border: 1px solid #bbb;
+    background-color: #e7e7e7;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    border-radius: 4px;
+}
+
+.wd-modules button:hover {
+    background-color: #eaeaea;
+}
+
+.list-group-item textarea {
+    margin-top: 8px;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.list-group-item p {
+    margin: 0;
+   
+    padding: 6px;
+
+}

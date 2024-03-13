@@ -1,6 +1,6 @@
 [
     {
-        "_id": "CS1234",
+        "_id": "CS1234React",
         "name": "ReactJS",
         "description": "Basic principles of rocket propulsion and rocket engines.",
         "course": "CS1234",
@@ -26,7 +26,7 @@
         ]
     },
     {
-        "_id": "CS1234",
+        "_id": "CS1234CSS",
         "name": "CSS",
         "description": "Basic principles of CSS.",
         "course": "CS1234",
@@ -52,7 +52,7 @@
         ]
     },
     {
-        "_id": "CS3520",
+        "_id": "CS3520C++",
         "name": "Programming in C++",
         "description": "Understanding rocket fuel, combustion processes, and efficiency.",
         "course": "CS3520",
@@ -78,7 +78,7 @@
         ]
     },
     {
-        "_id": "CS4500",
+        "_id": "CS4500WebDev",
         "name": "Web Development",
         "description": "Principles of rocket nozzle design and performance optimization.",
         "course": "CS4500",
@@ -104,31 +104,31 @@
         ]
     },
     {
-        "_id": "IS4300",
+        "_id": "IS4300HCI",
         "name": "Human Computer Interaction",
         "description": "Basic aerodynamic concepts and fluid dynamics principles.",
         "course": "IS4300"
     },
     {
-        "_id": "IS4800",
+        "_id": "IS4800EMP",
         "name": "Empirical Research Methods",
         "description": "Understanding subsonic and supersonic aerodynamic behaviors.",
         "course": "IS4800"
     },
     {
-        "_id": "CS3500",
+        "_id": "CS3500OOD",
         "name": "Object Oriented Design",
         "description": "Study of aerodynamic heating and thermal protection systems.",
         "course": "CS3500"
     },
     {
-        "_id": "CS3000",
+        "_id": "CS3000Algo",
         "name": "Algorithms",
         "description": "Fundamentals of designing spacecraft structures and materials selection.",
         "course": "CS3000"
     },
     {
-        "_id": "CS1000",
+        "_id": "CS1000Intro",
         "name": "Introduction to Computer Science",
         "description": "Understanding orbital dynamics and mission planning.",
         "course": "CS1000"
