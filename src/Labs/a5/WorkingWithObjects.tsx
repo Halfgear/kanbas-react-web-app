@@ -1,0 +1,75 @@
+import React, { useState } from "react";
+function WorkingWithObjects() {
+    const [assignment, setAssignment] = useState({
+        id: 1, title: "NodeJS Assignment",
+        description: "Create a NodeJS server with ExpressJS",
+        due: "2021-10-10", completed: false, score: 0,
+    });
+    const [module, setModule] = useState({
+        id: 2, name: "NodeJS module",
+        description: "Create a NodeJS module", completed: false, score: 0,
+    });
+    const ASSIGNMENT_URL = "http://localhost:4000/a5/assignment"
+    const MODULE_URL = "http://localhost:4000/a5/module"
+    return (
+        <div>
+            <h3>Working With Objects</h3>
+            <h4> On my own section</h4>
+            <a className="btn btn-primary"
+                href={`http://localhost:4000/a5/module`}>
+                Get Module
+            </a>
+            <br />
+            <a className="btn btn-primary"
+                href={`http://localhost:4000/a5/module/name`}>
+                Get Module Name
+            </a>
+            <br />
+            <a className="btn btn-primary"
+                href={`${MODULE_URL}/score/${module.score}`}>
+                Update score
+            </a>
+            <input type="number"
+                onChange={(e) => setModule({
+                    ...module,
+                    score: Number(e.target.value)
+                })}
+                value={module.score} />
+            <br />
+            <a className="btn btn-primary"
+                href={`${MODULE_URL}/completed/${module.completed}`}>
+                Update completed check the small box below to update to true
+            </a>
+            <br />
+            <input className="form-check-input"
+            type="checkbox"
+                onChange={(e) => setModule({
+                    ...module,
+                    completed: e.target.checked
+                })}
+                checked={module.completed} />
+            <br />
+            <h4>Retrieving Objects</h4>
+            <a className="btn btn-primary"
+                href="http://localhost:4000/a5/assignment">
+                Get Assignment
+            </a>
+            <h4>Retrieving Properties</h4>
+            <a className="btn btn-primary"
+                href="http://localhost:4000/a5/assignment/title">
+                Get Title
+            </a>
+            <br />
+            <a href={`${ASSIGNMENT_URL}/title/${assignment.title}`}>
+                Update Title
+            </a>
+            <input type="text"
+                onChange={(e) => setAssignment({
+                    ...assignment,
+                    title: e.target.value
+                })}
+                value={assignment.title} />
+        </div>
+    );
+}
+export default WorkingWithObjects;
