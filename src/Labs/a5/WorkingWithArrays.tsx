@@ -9,7 +9,16 @@ function WorkingWithArrays() {
         due: "2021-09-09",
         completed: false,
     });
-    const [todos, setTodos] = useState([]);
+    const [todos, setTodos] = useState<any[]>([]);
+    const postTodo = async () => {
+        const response = await axios.post(API, todo);
+        setTodos([...todos, response.data]);
+    };
+    const deleteTodo = async (todo: any) => {
+        const response = await axios.delete(`${API}/${todo.id}`);
+        setTodos(todos.filter((t) => t.id !== todo.id));
+    };
+
     const fetchTodos = async () => {
         const response = await axios.get(API);
         setTodos(response.data);
@@ -19,47 +28,63 @@ function WorkingWithArrays() {
             .get(`${API}/${todo.id}/delete`);
         setTodos(response.data);
     };
-    const createTodo = async () => {
-        const response = await axios.get(`${API}/create`);
-        setTodos(response.data);
-    };
+
     const fetchTodoById = async (id: any) => {
         const response = await axios.get(`${API}/${id}`);
         setTodo(response.data);
     };
 
-    const updateTitle = async () => {
-        const response = await axios.get(`${API}/${todo.id}/title/${todo.title}`);
+    const updateTodo = async () => {
+        const response = await axios.put(`${API}/${todo.id}`, todo);
+        setTodos(todos.map((t) => (t.id === todo.id ? todo : t)));
+    };
+
+    const createTodo = async () => {
+        const response = await axios.get(`${API}/create`);
         setTodos(response.data);
     };
+
 
     useEffect(() => {
         fetchTodos();
     }, []);
 
     const API = "http://localhost:4000/a5/todos";
+
     return (
         <div>
             <hr />
             <h2>Working with Arrays</h2>
-            <button className='btn btn-primary' onClick={createTodo} >
-                Create Todo
-            </button>
-            <br />
-            <button className = 'btn btn-success' onClick={updateTitle} >
-                Update Title
-            </button>
-            <br />
-            <br />
-            <input type="number" value={todo.id}
-                onChange={(e) => setTodo({
-                    ...todo, id: parseInt(e.target.value)
-                })} />
-            <input type="text" value={todo.title}
-                onChange={(e) => setTodo({
-                    ...todo, title: e.target.value
-                })} />
+            <input value={todo.id} readOnly />
+            <input onChange={(e) => setTodo({ ...todo, title: e.target.value })}
+                value={todo.title} type="text" />
             <br /><br />
+            <textarea value={todo.description}
+                onChange={(e) => setTodo({
+                    ...todo,
+                    description: e.target.value
+                })} />
+            <br />
+            <input value={todo.due} type="date" onChange={(e) => setTodo({
+                ...todo, due: e.target.value
+            })} />
+            <br />
+            <label>
+                <input value={todo.completed.toString()} type="checkbox"
+                    onChange={(e) => setTodo({
+                        ...todo, completed: e.target.checked
+                    })} />
+                Completed
+            </label>
+            <br />
+            <button onClick={() => deleteTodo(todo)} className="btn btn-danger">
+                Delete
+            </button>
+            <button className='btn btn-primary' onClick={postTodo}> Post Todo </button>
+            <button className='btn btn-success' onClick={updateTodo}>
+                Update Todo
+            </button>
+            <br />
             <ul>
                 {todos.map((todo: any) => (
                     <li key={todo.id} className="list-group-item">
