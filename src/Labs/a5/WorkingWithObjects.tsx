@@ -13,6 +13,7 @@ function WorkingWithObjects() {
     const MODULE_URL = "http://localhost:4000/a5/module"
     return (
         <div>
+            <hr />
             <h3>Working With Objects</h3>
             <h4> On my own section</h4>
             <a className="btn btn-primary"
@@ -69,6 +70,7 @@ function WorkingWithObjects() {
                     title: e.target.value
                 })}
                 value={assignment.title} />
+            <hr />
         </div>
     );
 }
