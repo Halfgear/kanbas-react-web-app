@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 function WorkingWithObjects() {
     const [assignment, setAssignment] = useState({
         id: 1, title: "NodeJS Assignment",
@@ -10,11 +11,35 @@ function WorkingWithObjects() {
         description: "Create a NodeJS module", completed: false, score: 0,
     });
     const ASSIGNMENT_URL = "http://localhost:4000/a5/assignment"
+    const fetchAssignment = async () => {
+        const response = await axios.get(`${ASSIGNMENT_URL}`);
+        setAssignment(response.data);
+    };
+    const updateTitle = async () => {
+        const response = await axios
+            .get(`${ASSIGNMENT_URL}/title/${assignment.title}`);
+        setAssignment(response.data);
+    };
+    useEffect(() => {
+        fetchAssignment();
+    }, []);
+
     const MODULE_URL = "http://localhost:4000/a5/module"
     return (
         <div>
             <hr />
             <h3>Working With Objects</h3>
+            <h3>Modifying Properties</h3>
+            <input onChange={(e) => setAssignment({
+                ...assignment, title: e.target.value
+            })}
+                value={assignment.title} type="text" />
+            <button onClick={updateTitle} >
+                Update Title to: {assignment.title}
+            </button>
+            <button onClick={fetchAssignment} >
+                Fetch Assignment
+            </button>
             <h4> On my own section</h4>
             <a className="btn btn-primary"
                 href={`http://localhost:4000/a5/module`}>
@@ -43,7 +68,7 @@ function WorkingWithObjects() {
             </a>
             <br />
             <input className="form-check-input"
-            type="checkbox"
+                type="checkbox"
                 onChange={(e) => setModule({
                     ...module,
                     completed: e.target.checked
