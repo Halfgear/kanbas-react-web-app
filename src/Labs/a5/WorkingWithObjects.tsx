@@ -79,12 +79,12 @@ function WorkingWithObjects() {
             <br />
             <h4>Retrieving Objects</h4>
             <a className="btn btn-primary"
-                href={`${ASSIGNMENT_URL}/a5/assignment`}>
+                href={`${ASSIGNMENT_URL}`}>
                 Get Assignment
             </a>
             <h4>Retrieving Properties</h4>
             <a className="btn btn-primary"
-                href={`${ASSIGNMENT_URL}/a5/assignment/title`}>
+                href={`${ASSIGNMENT_URL}/title`}>
                 Get Title
             </a>
             <br />
