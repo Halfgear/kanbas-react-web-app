@@ -15,6 +15,10 @@ export default function Profile() {
         const account = await client.profile();
         setProfile(account);
     };
+    const signout = async () => {
+        await client.signout();
+        navigate("/Kanbas/Account/Signin");
+    };
     useEffect(() => {
         fetchProfile();
     }, []);
@@ -22,8 +26,11 @@ export default function Profile() {
         <div>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-start" }}>
                 <h1>Profile</h1>
-                <button onClick={save} className="btn btn-primary" style={{ marginLeft: "20px" }}>
+                <button onClick={save} className="btn btn-primary" style={{ marginLeft: "20px", marginRight: "20px" }}>
                     Save
+                </button>
+                <button onClick={signout} className="btn btn-danger" >
+                    Signout
                 </button>
             </div>
             <Link to="/Kanbas/Account/Admin/Users"
