@@ -80,7 +80,9 @@ function WorkingWithArrays() {
             <button onClick={() => deleteTodo(todo)} className="btn btn-danger">
                 Delete
             </button>
-            <button className='btn btn-primary' onClick={postTodo}> Post Todo </button>
+            <button className='btn btn-primary' onClick={postTodo}>
+                Post Todo
+            </button>
             <button className='btn btn-success' onClick={updateTodo}>
                 Update Todo
             </button>
