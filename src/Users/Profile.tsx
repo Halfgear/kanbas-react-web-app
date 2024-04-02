@@ -37,20 +37,34 @@ export default function Profile() {
                 className="btn btn-warning w-100">
                 Users
             </Link>
+
             {profile && (
                 <div>
+                    <label>Username: </label>
                     <input value={profile.username} onChange={(e) =>
                         setProfile({ ...profile, username: e.target.value })} />
+                    <br />
+                    <label>Password: </label>
                     <input value={profile.password} onChange={(e) =>
                         setProfile({ ...profile, password: e.target.value })} />
+                    <br />
+                    <label>First Name: </label>
                     <input value={profile.firstName} onChange={(e) =>
                         setProfile({ ...profile, firstName: e.target.value })} />
+                    <br />
+                    <label>Last Name: </label>
                     <input value={profile.lastName} onChange={(e) =>
                         setProfile({ ...profile, lastName: e.target.value })} />
+                    <br />
+                    <label>Date of Birth: </label>
                     <input value={profile.dob} type="date" onChange={(e) =>
                         setProfile({ ...profile, dob: e.target.value })} />
+                    <br />
+                    <label>Email: </label>
                     <input value={profile.email} onChange={(e) =>
                         setProfile({ ...profile, email: e.target.value })} />
+                    <br />
+                    <label>Role:</label>
                     <select onChange={(e) =>
                         setProfile({ ...profile, role: e.target.value })}>
                         <option value="USER">User</option>
