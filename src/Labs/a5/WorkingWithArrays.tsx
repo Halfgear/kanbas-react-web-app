@@ -48,7 +48,7 @@ function WorkingWithArrays() {
     useEffect(() => {
         fetchTodos();
     }, []);
-    const API_BASE = process.env.REACT_APP_API_BASE;
+    const API_BASE = process.env.REACT_APP_API_BASE_A5;
     const API = `${API_BASE}/a5/todos`;
 
     return (

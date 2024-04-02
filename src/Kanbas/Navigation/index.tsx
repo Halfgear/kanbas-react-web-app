@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import "./index.css";
-import "./index.css";
+
 import {
     FaTachometerAlt, FaRegUserCircle, FaBook, FaRegCalendarAlt, FaEnvelope, FaHistory,
     FaDesktop, FaShareSquare, FaQuestionCircle
